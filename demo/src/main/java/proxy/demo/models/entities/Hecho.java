@@ -25,7 +25,7 @@ public class Hecho {
     private Usuario usuario;
     private EstadoRevision estadoRevision;
 
-    public Hecho(Origen origen, String titulo, String descripcion, Categoria categoria, Ubicacion ubicacion, LocalDateTime fechaAcontecimiento) {
+    public Hecho(Integer id, Origen origen, String titulo, String descripcion, Categoria categoria, Ubicacion ubicacion, LocalDateTime fechaAcontecimiento) {
         this.origen=origen;
         this.titulo = titulo;
         this.descripcion = descripcion;
@@ -34,6 +34,7 @@ public class Hecho {
         this.fechaAcontecimiento = fechaAcontecimiento;
         this.fechaDeCarga = LocalDateTime.now();
         this.estadoRevision = EstadoRevision.PENDIENTE;
+        this.id = id;
     }
 
     public String getPais() {
