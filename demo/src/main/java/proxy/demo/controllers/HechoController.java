@@ -17,7 +17,7 @@ public class HechoController {
         this.hechoService = hechoService;
     }
 
-    @GetMapping
+    @GetMapping("/locales")
     public List<HechoOutputDTO> getAllHechos() {
         return hechoService.getAllHechos();
     }
