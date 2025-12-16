@@ -15,7 +15,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class HechoService implements IHechoService {
@@ -57,7 +59,7 @@ public class HechoService implements IHechoService {
 
         // == HECHO 1 ==
         Hecho h1 = new Hecho(
-                1,
+                UUID.randomUUID(),
                 Origen.FUENTE_DINAMICA,
                 "Incendio forestal en Córdoba",
                 "Bomberos trabajaron horas para contener un incendio de gran magnitud.",
@@ -69,7 +71,7 @@ public class HechoService implements IHechoService {
 
         // == HECHO 2 ==
         Hecho h2 = new Hecho(
-                2,
+                UUID.randomUUID(),
                 Origen.FUENTE_DINAMICA,
                 "Viento Zonda en Mendoza",
                 "Ráfagas fuertes provocaron caída de postes y baja visibilidad.",
@@ -81,7 +83,7 @@ public class HechoService implements IHechoService {
 
         // == HECHO 3 ==
         Hecho h3 = new Hecho(
-                3,
+                UUID.randomUUID(),
                 Origen.FUENTE_DINAMICA,
                 "Inundación en La Plata",
                 "Lluvias intensas causaron anegamientos en varios barrios.",
@@ -93,7 +95,7 @@ public class HechoService implements IHechoService {
 
         // == HECHO 4 ==
         Hecho h4 = new Hecho(
-                4,
+                UUID.randomUUID(),
                 Origen.FUENTE_DINAMICA,
                 "Granizo en Rosario",
                 "Tormenta con granizo afectó a múltiples vehículos.",
@@ -105,7 +107,7 @@ public class HechoService implements IHechoService {
 
         // == HECHO 5 ==
         Hecho h5 = new Hecho(
-                5,
+                UUID.randomUUID(),
                 Origen.FUENTE_DINAMICA,
                 "Nieve en Bariloche",
                 "Fuertes nevadas cerraron caminos de montaña.",
@@ -117,7 +119,7 @@ public class HechoService implements IHechoService {
 
         // == HECHO 6 ==
         Hecho h6 = new Hecho(
-                6,
+                UUID.randomUUID(),
                 Origen.FUENTE_DINAMICA,
                 "Tormenta eléctrica en Salta",
                 "Varias zonas afectadas con cortes de luz.",
@@ -129,7 +131,7 @@ public class HechoService implements IHechoService {
 
         // == HECHO 7 ==
         Hecho h7 = new Hecho(
-                7,
+                UUID.randomUUID(),
                 Origen.FUENTE_DINAMICA,
                 "Ola de calor en Buenos Aires",
                 "Temperaturas superiores a 38° durante tres días.",
@@ -141,7 +143,7 @@ public class HechoService implements IHechoService {
 
         // == HECHO 8 ==
         Hecho h8 = new Hecho(
-                8,
+                UUID.randomUUID(),
                 Origen.FUENTE_DINAMICA,
                 "Fuerte temporal en Mar del Plata",
                 "Vientos y lluvias intensas provocaron caída de árboles.",
@@ -153,7 +155,7 @@ public class HechoService implements IHechoService {
 
         // == HECHO 9 ==
         Hecho h9 = new Hecho(
-                9,
+                UUID.randomUUID(),
                 Origen.FUENTE_DINAMICA,
                 "Nevada en Ushuaia",
                 "Acumulación de nieve causó demoras en rutas.",
@@ -165,7 +167,7 @@ public class HechoService implements IHechoService {
 
         // == HECHO 10 ==
         Hecho h10 = new Hecho(
-                10,
+                UUID.randomUUID(),
                 Origen.FUENTE_DINAMICA,
                 "Tornado leve en Chaco",
                 "Vientos intensos provocaron voladuras de techos.",
@@ -197,7 +199,7 @@ public class HechoService implements IHechoService {
 
 
     @Override
-    public HechoOutputDTO getHechoPorId(Integer id) {
+    public HechoOutputDTO getHechoPorId(UUID id) {
         Hecho hecho = hechoRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Hecho no encontrado con ID: " + id));
 
@@ -206,5 +208,3 @@ public class HechoService implements IHechoService {
 
 
 }
-
-
