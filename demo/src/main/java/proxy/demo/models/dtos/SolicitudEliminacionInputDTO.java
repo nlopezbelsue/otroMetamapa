@@ -10,5 +10,5 @@ public class SolicitudEliminacionInputDTO {
     private String fundamento;
     private EstadoSolicitud aceptacion;
 //    private UUID idUsuario;
-    private Integer idHecho;
+    private UUID idHecho;
 }
