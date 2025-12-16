@@ -19,6 +19,7 @@ import proxy.demo.services.ISolicitudEliminacionService;
 import proxy.demo.shared.RespuestaHTTP;
 
 import java.util.List;
+import java.util.UUID;
 
 @Slf4j
 @Service
@@ -78,62 +79,62 @@ public class SolicitudEliminacionService implements ISolicitudEliminacionService
                 estado
         );
 
-        solicitud.setId(generarNuevoId());
+        solicitud.setId(UUID.randomUUID());
 
         solicitudEliminacionRepository.save(solicitud);
 
         return solicitudOutputDTO(solicitud);
     }
 
-    @Override
-    public RespuestaHTTP<SolicitudEliminacionOutputDTO> crearSolicitudesEliminacion() {
+//    @Override
+//    public RespuestaHTTP<SolicitudEliminacionOutputDTO> crearSolicitudesEliminacion() {
+//
+//        // === SOLICITUD 1 ===
+//        Hecho hecho1 = hechoRepository.findById(1)
+//                .orElseThrow(() -> new RuntimeException("Hecho no encontrado con ID 1"));
+//
+//        SolicitudEliminacion s1 = new SolicitudEliminacion(
+//                "El hecho contiene información incorrecta.",
+//                hecho1,
+//                EstadoSolicitud.PENDIENTE
+//        );
+//        s1.setId(1);
+//        solicitudEliminacionRepository.save(s1);
+//
+//        // === SOLICITUD 2 ===
+//        Hecho hecho3 = hechoRepository.findById(3)
+//                .orElseThrow(() -> new RuntimeException("Hecho no encontrado con ID 3"));
+//
+//        SolicitudEliminacion s2 = new SolicitudEliminacion(
+//                "La persona involucrada pidió que se elimine el registro.",
+//                hecho3,
+//                EstadoSolicitud.PENDIENTE
+//        );
+//        s2.setId(2);
+//        solicitudEliminacionRepository.save(s2);
+//
+//        // === SOLICITUD 3 ===
+//        Hecho hecho5 = hechoRepository.findById(5)
+//                .orElseThrow(() -> new RuntimeException("Hecho no encontrado con ID 5"));
+//
+//        SolicitudEliminacion s3 = new SolicitudEliminacion(
+//                "Duplicado de otro hecho similar.",
+//                hecho5,
+//                EstadoSolicitud.PENDIENTE
+//        );
+//        s3.setId(3);
+//        solicitudEliminacionRepository.save(s3);
+//
+//        return new RespuestaHTTP<>(solicitudOutputDTO(s3), HttpStatus.CREATED.value());
+//    }
 
-        // === SOLICITUD 1 ===
-        Hecho hecho1 = hechoRepository.findById(1)
-                .orElseThrow(() -> new RuntimeException("Hecho no encontrado con ID 1"));
-
-        SolicitudEliminacion s1 = new SolicitudEliminacion(
-                "El hecho contiene información incorrecta.",
-                hecho1,
-                EstadoSolicitud.PENDIENTE
-        );
-        s1.setId(1);
-        solicitudEliminacionRepository.save(s1);
-
-        // === SOLICITUD 2 ===
-        Hecho hecho3 = hechoRepository.findById(3)
-                .orElseThrow(() -> new RuntimeException("Hecho no encontrado con ID 3"));
-
-        SolicitudEliminacion s2 = new SolicitudEliminacion(
-                "La persona involucrada pidió que se elimine el registro.",
-                hecho3,
-                EstadoSolicitud.PENDIENTE
-        );
-        s2.setId(2);
-        solicitudEliminacionRepository.save(s2);
-
-        // === SOLICITUD 3 ===
-        Hecho hecho5 = hechoRepository.findById(5)
-                .orElseThrow(() -> new RuntimeException("Hecho no encontrado con ID 5"));
-
-        SolicitudEliminacion s3 = new SolicitudEliminacion(
-                "Duplicado de otro hecho similar.",
-                hecho5,
-                EstadoSolicitud.PENDIENTE
-        );
-        s3.setId(3);
-        solicitudEliminacionRepository.save(s3);
-
-        return new RespuestaHTTP<>(solicitudOutputDTO(s3), HttpStatus.CREATED.value());
-    }
-
-    private Integer generarNuevoId() {
-        return solicitudEliminacionRepository.findAll()
-                .stream()
-                .mapToInt(SolicitudEliminacion::getId)
-                .max()
-                .orElse(0) + 1;
-    }
+//    private Integer generarNuevoId() {
+//        return solicitudEliminacionRepository.findAll()
+//                .stream()
+//                .mapToInt(SolicitudEliminacion::getId)
+//                .max()
+//                .orElse(0) + 1;
+//    }
 
 
 }
