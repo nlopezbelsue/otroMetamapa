@@ -35,10 +35,10 @@ public class SolicitudEliminacionController {
         return solicitudEliminacionService.crearSolicitudEliminacion(solicitudInputDTO);
     }
 
-    @PostMapping("/solicitudes-prueba")
-    public RespuestaHTTP<SolicitudEliminacionOutputDTO> newSolicitudEliminacion(){
-        return solicitudEliminacionService.crearSolicitudesEliminacion();
-    }
+//    @PostMapping("/solicitudes-prueba")
+//    public RespuestaHTTP<SolicitudEliminacionOutputDTO> newSolicitudEliminacion(){
+//        return solicitudEliminacionService.crearSolicitudesEliminacion();
+//    }
 
 //    @PutMapping("/revision/{id}")
 //    public SolicitudEliminacionOutputDTO revisarSolicitud(@PathVariable UUID id, @RequestBody SolicitudEliminacionInputDTO solicitudInputDTO) {
