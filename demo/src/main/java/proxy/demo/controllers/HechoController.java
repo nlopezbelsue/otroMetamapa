@@ -7,6 +7,7 @@ import proxy.demo.shared.RespuestaHTTP;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/hechos")
@@ -28,7 +29,7 @@ public class HechoController {
     }
 
     @GetMapping("/{id}")
-    public HechoOutputDTO getHechoPorId(@PathVariable Integer id) {
+    public HechoOutputDTO getHechoPorId(@PathVariable UUID id) {
         return hechoService.getHechoPorId(id);
     }
 
