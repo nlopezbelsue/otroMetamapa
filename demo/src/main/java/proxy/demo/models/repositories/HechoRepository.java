@@ -10,6 +10,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Repository
 public class HechoRepository {
@@ -17,7 +18,7 @@ public class HechoRepository {
 
     public HechoRepository() {
         this.hechos.add(new Hecho(
-                1,
+                UUID.randomUUID(),
                 Origen.FUENTE_DINAMICA,
                 "Incendio forestal en Córdoba",
                 "Bomberos trabajaron horas para contener un incendio de gran magnitud.",
@@ -27,7 +28,7 @@ public class HechoRepository {
         ));
 
         this.hechos.add(new Hecho(
-                2,
+                UUID.randomUUID(),
                 Origen.FUENTE_DINAMICA,
                 "Viento Zonda en Mendoza",
                 "Ráfagas fuertes provocaron caída de postes y baja visibilidad.",
@@ -37,7 +38,7 @@ public class HechoRepository {
         ));
 
         this.hechos.add(new Hecho(
-                3,
+                UUID.randomUUID(),
                 Origen.FUENTE_DINAMICA,
                 "Inundación en La Plata",
                 "Lluvias intensas causaron anegamientos en varios barrios.",
@@ -51,7 +52,7 @@ public class HechoRepository {
         return hechos;
     }
 
-    public Optional<Hecho> findById(Integer id) {
+    public Optional<Hecho> findById(UUID id) {
         return hechos.stream().filter(h -> h.getId().equals(id)).findFirst();
     }
 
