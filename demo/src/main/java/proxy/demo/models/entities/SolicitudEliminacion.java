@@ -11,7 +11,7 @@ import java.util.UUID;
 @Getter
 @Setter
 public class SolicitudEliminacion {
-    private Integer id;
+    private UUID id;
     private String fundamento;
     private EstadoSolicitud aceptacion;
     private Hecho hecho;
