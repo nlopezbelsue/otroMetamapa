@@ -11,5 +11,5 @@ import java.util.UUID;
 public interface IHechoService {
     List<HechoOutputDTO> getAllHechos();
     RespuestaHTTP<HechoOutputDTO> crearHechos();
-    HechoOutputDTO getHechoPorId(Integer id);
+    HechoOutputDTO getHechoPorId(UUID id);
 }
