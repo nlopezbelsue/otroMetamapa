@@ -9,5 +9,5 @@ import java.util.UUID;
 public class SolicitudEliminacionOutputDTO {
     private String fundamento;
     private EstadoSolicitud aceptacion;
-    private Integer id;
+    private UUID id;
 }
