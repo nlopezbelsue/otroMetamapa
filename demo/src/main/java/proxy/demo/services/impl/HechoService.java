@@ -47,6 +47,7 @@ public class HechoService implements IHechoService {
         dto.setOrigen(hecho.getOrigen());
         dto.setPais(hecho.getUbicacion().getPais());
         dto.setProvincia(hecho.getUbicacion().getProvincia());
+        dto.setFotos(new ArrayList<>());
         return dto;
     }
 
@@ -204,3 +205,4 @@ public class HechoService implements IHechoService {
 
 
 }
+
