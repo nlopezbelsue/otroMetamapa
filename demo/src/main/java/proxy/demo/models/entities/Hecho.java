@@ -8,13 +8,14 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 
 @NoArgsConstructor
 @Getter
 @Setter
 public class Hecho {
-    private Integer id;
+    private UUID id;
     private String titulo;
     private String descripcion;
     private Categoria categoria;
@@ -25,7 +26,7 @@ public class Hecho {
     private Usuario usuario;
     private EstadoRevision estadoRevision;
 
-    public Hecho(Integer id, Origen origen, String titulo, String descripcion, Categoria categoria, Ubicacion ubicacion, LocalDateTime fechaAcontecimiento) {
+    public Hecho(UUID id, Origen origen, String titulo, String descripcion, Categoria categoria, Ubicacion ubicacion, LocalDateTime fechaAcontecimiento) {
         this.origen=origen;
         this.titulo = titulo;
         this.descripcion = descripcion;
