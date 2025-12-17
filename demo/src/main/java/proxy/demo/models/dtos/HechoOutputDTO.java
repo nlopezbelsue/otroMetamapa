@@ -11,7 +11,7 @@ import java.util.UUID;
 
 @Data
 public class HechoOutputDTO {
-    private Integer id;
+    private UUID id;
     private String nombre;
     private String descripcion;
     private String categoria;
@@ -26,3 +26,4 @@ public class HechoOutputDTO {
     private String provincia;
     private int cantidadSolicitudesEliminacion;
 }
+
