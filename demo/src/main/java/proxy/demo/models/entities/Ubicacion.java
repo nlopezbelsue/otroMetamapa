@@ -23,7 +23,7 @@ public class Ubicacion {
     public Ubicacion(Double latitud, Double longitud) {
         this.latitud = latitud;
         this.longitud = longitud;
-//        this.completarDatos();
+        this.completarDatos();
     }
 
     private JSONObject getAddressJSON() throws Exception {
