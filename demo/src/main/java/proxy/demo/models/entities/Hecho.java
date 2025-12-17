@@ -34,7 +34,7 @@ public class Hecho {
         this.ubicacion = ubicacion;
         this.fechaAcontecimiento = fechaAcontecimiento;
         this.fechaDeCarga = LocalDateTime.now();
-        this.estadoRevision = EstadoRevision.PENDIENTE;
+        this.estadoRevision = EstadoRevision.ACEPTADO;
         this.id = id;
     }
 
@@ -60,3 +60,4 @@ public class Hecho {
                 '}';
     }
 }
+
